@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashScreen">
+
+    <fragment
+        android:id="@+id/splashScreen"
+        android:name="com.catslover.android.ilovecats.SplashScreen"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreen_to_loginScreen"
+            app:destination="@id/loginScreen"
+            app:popUpTo="@id/splashScreen"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginScreen"
+        android:name="com.catslover.android.ilovecats.LoginScreen"
+        android:label="fragment_login_screen"
+        tools:layout="@layout/fragment_login_screen" >
+        <action
+            android:id="@+id/action_loginScreen_to_catSounds"
+            app:destination="@id/catSounds" />
+        <action
+            android:id="@+id/action_loginScreen_to_catsName"
+            app:destination="@id/catsName" />
+        <action
+            android:id="@+id/action_loginScreen_to_caringCatFragment"
+            app:destination="@id/caringCatFragment" />
+        <action
+            android:id="@+id/action_loginScreen_to_catsPostures"
+            app:destination="@id/catsPostures" />
+        <action
+            android:id="@+id/action_loginScreen_to_catsFeed"
+            app:destination="@id/catsFeed" />
+    </fragment>
+    <fragment
+        android:id="@+id/catSounds"
+        android:name="com.catslover.android.ilovecats.CatSounds"
+        android:label="fragment_cat_sounds"
+        tools:layout="@layout/fragment_cat_sounds" />
+    <fragment
+        android:id="@+id/catsName"
+        android:name="com.catslover.android.ilovecats.catsName"
+        android:label="fragment_cats_name"
+        tools:layout="@layout/fragment_cats_name" >
+        <action
+            android:id="@+id/action_catsName_to_boygirlcatnames"
+            app:destination="@id/boygirlcatnames" />
+    </fragment>
+    <fragment
+        android:id="@+id/boygirlcatnames"
+        android:name="com.catslover.android.ilovecats.boygirlcatnames"
+        android:label="fragment_boygirlcatnames"
+        tools:layout="@layout/fragment_boygirlcatnames" >
+        <argument
+            android:name="catgender"
+            app:argType="integer"
+          />
+    </fragment>
+    <fragment
+        android:id="@+id/caringCatFragment"
+        android:name="com.catslover.android.ilovecats.CaringCatFragment"
+        android:label="fragment_caring_cat"
+        tools:layout="@layout/fragment_caring_cat" />
+    <fragment
+        android:id="@+id/catsPostures"
+        android:name="com.catslover.android.ilovecats.CatsPostures"
+        android:label="fragment_cats_postures"
+        tools:layout="@layout/fragment_cats_postures" />
+    <fragment
+        android:id="@+id/catsFeed"
+        android:name="com.catslover.android.ilovecats.CatsFeed"
+        android:label="fragment_cats_feed"
+        tools:layout="@layout/fragment_cats_feed" >
+        <action
+            android:id="@+id/action_catsFeed_to_catsFeedDetailsFragmnet"
+            app:destination="@id/catsFeedDetailsFragmnet" />
+
+
+    </fragment>
+    <fragment
+        android:id="@+id/catsFeedDetailsFragmnet"
+        android:name="com.catslover.android.ilovecats.CatsFeedDetailsFragmnet"
+        android:label="fragment_cats_feed_details_fragmnet"
+        tools:layout="@layout/fragment_cats_feed_details_fragmnet" >
+        <argument
+            android:name="CatItem"
+            app:argType="com.catslover.android.dataclasses.Cat"
+         />
+    </fragment>
+</navigation>
